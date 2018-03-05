@@ -21,7 +21,7 @@
     "prebrowserify": "mkdirp build",
     "browserify": "cross-env NODE_ENV=production browserify --full-paths dist/browser.js --standalone bitshares_js -o build/bitsharesjs.js -d",
     "postbrowserify": "cross-env NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --output build/bitsharesjs.min.js -- build/bitsharesjs.js",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "doc": "esdoc -c esdoc.json",
     "example:transfer": "babel-node examples/transfer",
     "example:chainStore": "babel-node examples/chainStore",
@@ -48,7 +48,7 @@
   "jsnext:main": "./es/index.js",
   "dependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-1": "^6.16.0",
     "bigi": "^1.4.2",
     "bitsharesjs-ws": "^1.3.2",
